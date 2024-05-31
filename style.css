@@ -193,6 +193,22 @@ body {
   text-decoration: none;
 }
 
+.header-item li a {
+  position: relative;
+  display: block;
+  padding: 4px 8px;
+}
+
+.header .header-item li a:hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid #919191;
+  mask: conic-gradient(at 8px 8px, rgba(0, 0, 0, 0) 75%, #000 0) 0 0 /
+      calc(100% - 8px) calc(100% - 8px),
+    linear-gradient(#000 0 0) content-box;
+}
+
 /* 服務項目 */
 .server {
   margin: 100px auto;
@@ -403,6 +419,96 @@ body {
   text-decoration: none;
 }
 
+/* 常見問題 */
+.question {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.question .question-list {
+  display: flex;
+  flex-wrap: wrap; /* 換行 */
+  justify-content: space-between;
+  width: 1076px;
+  max-width: 100%;
+  margin: 50px auto;
+  /* border: 1px solid #000; */
+}
+
+.question .question-list li {
+  width: 49%;
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.question .question-list li h2 {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.question .question-list li p {
+  font-size: 20px;
+  /* font-weight: bold; */
+}
+
+/* 表尾 */
+.footer {
+  background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/footer-bg-lg.png?raw=true");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* flex-direction: column; */
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.footer .footer-logo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer .footer-logo a img {
+  display: block;
+  padding-bottom: 20px;
+}
+
+.footer .footer-content {
+  font-size: 20px;
+}
+
+.footer .footer-content p {
+  padding-bottom: 20px;
+}
+
+.footer .footer-content .mail {
+  color: #919191;
+}
+
+.footer .footer-form li {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  border: 1px solid #c5c5c5;
+}
+
+.footer .footer-form .black-form {
+  background: #000;
+  color: #fff;
+}
+
 /* 新增媒體查詢，為不同螢幕大小設置樣式 */
 @media screen and (max-width: 768px) {
   /* 將header的item改為column方向 */
@@ -447,5 +553,30 @@ body {
 
   .sample-list-item {
     width: 80%;
+  }
+
+  /* 調整常見問題列表的項目寬度 */
+  .question-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .question .question-list li {
+    width: 90%;
+  }
+
+  /* 調整表尾的佈局 */
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .footer-logo {
+    /* flex-direction: column; */
+    align-items: center;
+  }
+
+  .footer .footer-content {
+    align-items: center;
   }
 }
