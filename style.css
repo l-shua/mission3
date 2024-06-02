@@ -187,6 +187,10 @@ body {
   /* border: 1px solid #000; */
 }
 
+.hamburger {
+  visibility: hidden;
+}
+
 .header .header-item li a {
   color: #000;
   font-weight: bold;
@@ -513,13 +517,19 @@ body {
 @media screen and (max-width: 768px) {
   /* 將header的item改為column方向 */
   .header {
-    flex-direction: column;
+    width: 80%;
+    justify-content: space-around;
     align-items: center;
   }
 
+  .hamburger {
+    visibility: visible;
+  }
+
   .header .header-item {
-    width: 100%;
-    justify-content: center;
+    visibility: hidden;
+    /* width: 100%;
+    justify-content: center; */
   }
 
   /* 將服務項目的列表改為列方向 */
@@ -535,14 +545,20 @@ body {
 
   /* 將服務流程列表寬度設置為100% */
   .proce-list li {
-    width: 80%;
-    margin-bottom: 20px;
+    flex-direction: column;
+    text-align: center;
+    /* padding: 20px; */
+    width: 90%;
+  }
+
+  .proce-list li p {
+    text-align: left;
   }
 
   /* 將價格列表的項目設置為100%寬度 */
   .price-list-item {
-    width: 80%;
-    flex-direction: column;
+    width: 90%;
+    /* flex-direction: column; */
   }
 
   /* 調整客戶案例的列表布局 */
